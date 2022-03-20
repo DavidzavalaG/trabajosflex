@@ -1,0 +1,15 @@
+%opción  noyywrap
+%{
+# incluir  < stdio.h >
+conv int = 0 ;
+%}
+
+%%
+un | mi | yo | o | u { printf ( " Voz \n " ); conversión++;}
+. {ECO;}
+[ \n ] { printf ( " %d voces \n " ,conv); conv= 0 ;}
+%%
+
+int  principal (){
+    yylex ();
+}
