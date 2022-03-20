@@ -1,0 +1,19 @@
+%opción  noyywrap
+%{
+# incluir  < stdio.h >
+int cona= 0 , cono= 0 , coni= 0 , cono= 0 , conu= 0 ;
+%}
+
+%%
+a { printf ( " Vocal a \n " ); cona++;}
+e { printf ( " Vocal e \n " ); cono++;}
+yo { printf ( " Vocal i \n " ); coni++;}
+o { printf ( " Vocal o \n " ); cono++;}
+u { printf ( " Voz u \n " ); continuo++;}
+[ \n ] { printf ( " Vocales a %d \n Vocales e %d \n Vocales i %d \n Vocales o %d \n Vocales u %d \n " ,cona,cone,coni,cono,conu) ;
+cona= 0 ;cono= 0 ;coni= 0 ;cono= 0 ;conu= 0 ;}
+%%
+
+int  principal (){
+    yylex ();
+}
