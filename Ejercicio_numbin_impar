@@ -1,0 +1,15 @@
+%opción  noyywrap
+%{
+# incluir  < stdio.h >
+numero int ;
+%}
+
+%%
+[ \n\t ]
+[ 0|1 ] * [ 1 ] { printf ( " Numero binario impar %d encontrado %s \n " ,++num,yytext);}
+%%
+
+int  principal (){
+    yylex ();
+    devolver  1 ;
+}
