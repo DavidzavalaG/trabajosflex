@@ -1,0 +1,17 @@
+%opción  noyywrap
+%{
+# incluir  < stdio.h >
+int con= 0 , ext= 0 ;
+%}
+
+%%
+si | eso | el | en | to { printf ( " %s es una palabra de lista \n " ,yytext);++con;}
+[ a - zA - Z ] + { printf ( " %s no es una palabra de lista \n " ,yytext);++ext;}
+. {ECO;}
+[ \n ] { printf ( " %d palabras de lista %d palabras fuera de lista \n " ,con,ext);}
+%%
+
+int  principal (){
+    yylex ();
+    devolver  1 ;
+}
