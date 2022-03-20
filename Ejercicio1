@@ -1,0 +1,18 @@
+%{
+# incluir  < stdio.h >
+int min= 0 , may= 0 ;
+%}
+
+%%
+[ A - Z ] { printf ( " Mayuscula \t " ); mayo++;}
+[ a - z ] { printf ( " minuscula \t " ); min++;}
+%%
+int  yywrap (){
+    devolver  1 ;
+}
+
+int  principal (){
+    printf ( " Escribe una cadena de texto      " );
+    yylex ();
+    printf ( " Mayuscula=%d, minuscula=%d " , may, min);   
+}
