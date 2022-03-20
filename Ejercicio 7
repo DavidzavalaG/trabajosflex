@@ -1,0 +1,15 @@
+%opción  noyywrap
+%{
+# incluir  < stdio.h >
+int con= 0 ,ext= 0 ;
+%}
+
+%%
+automóvil | más | largo | cambiar | descanso | enumeración | registro | definición de tipo | caso | externo | volver | unión | carbón | flotador | corto | sin firmar | constante | para | firmado | vacío {con++; printf ( " palabra del lenguaje C identificado \n " );}
+[ a - zA - Z ] + {ext++; printf ( " palabra externa del lenguaje C identificado \n " );}
+[ \n ] { printf ( " %d palabras del lenguaje C \n %d palabras externas \n " ,con,ext);}
+%%
+
+int  principal (){
+    yylex ();
+}
