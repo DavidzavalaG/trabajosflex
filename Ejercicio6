@@ -1,0 +1,16 @@
+%opción noyywrap
+%{
+# incluir  < stdio.h >
+%}
+
+%%
+[ \n\t ]
+ir | si | jugar | eso | ventana | saltar | pensar | aprender | estudio | a | en | el | enlace { printf ( " \" %s \" es " ,yytext); printf ( " palabra clave identificada \n " );}
+[ a - zA - Z ] + { printf ( " \" %s \" es " ,yytext); printf ( " otra palabra \n " );}
+[ 0 - 9 ] + { printf ( " \" %s \" es " ,yytext); printf ( " numero encontrado \n " );}
+%%
+
+int  principal (){
+    yylex ();
+    devolver  1 ;
+}
