@@ -1,0 +1,18 @@
+%opción  noyywrap
+%{
+# incluir  < stdio.h >
+%}
+
+%%
+[ \n\t ]
+ir | si | jugar | eso | ventana | saltar | pensar | aprender | estudio | a | en | el | link { printf ( " palabra clave identificada \n " );}
+automóvil | más | largo | cambiar | descanso | enumeración | registro | definición de tipo | caso | externo | volver | unión | carbón | flotador | corto | sin firmar | constante | para | firmado | void { printf ( " palabra reservada C identificada \n " );}
+[ a - zA - Z ] + { printf ( " Otra palabra \n " );}
+[ \+ | \- | \* | \/ ] { printf ( " Operador \n " );}
+[ 0 - 9 ] + { printf ( " numeros \n " );}
+%%
+
+int  principal (){
+    yylex ();
+    devolver  1 ;
+}
