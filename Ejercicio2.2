@@ -1,0 +1,31 @@
+%opción  noyywrap
+%{
+# incluir  < stdio.h >
+unsigned charCount= 0 , wordCount= 0 , lineCount= 0 ;
+%}
+
+palabra [ ^ \t\n ] +
+eol  \n
+
+%%
+{ palabra } {wordCount++;charCount+=yyleng;}
+{ eol } {lineCount++;charCount++;}
+. {charCount++;}
+%%
+principal (argc,argv)
+intargc;
+char **argv;
+{
+    si (argc> 1 ){
+        ARCHIVO *archivo;
+        archivo = fopen (argv[ 1 ], " r " );
+        si (!archivo){
+            fprintf (stderr, " no se pudo abrir %s \n " ,argv[ 1 ]);
+            salida ( 1 );
+        }
+    yyin = archivo;
+    }
+    yylex ();
+    printf ( " %u %u %u \n " , cuentaCaracteres, CuentaPalabras, CuentaLineas);
+    devolver  0 ;
+}
