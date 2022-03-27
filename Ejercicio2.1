@@ -1,0 +1,15 @@
+%opción  noyywrap
+%{
+# incluir  < stdio.h >
+
+%}
+
+%%
+[ \n\t ];
+- ? (([ 0 - 9 ] + ) | ([ 0 - 9 ] * \. [ 0 - 9 ] + )([ eE ][ -+ ] ? [ 0 - 9 ] + ) ? ) { printf ( " número \ n " );}
+
+. ECO;
+%%
+principal (){
+    yylex ();
+}
