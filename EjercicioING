@@ -1,0 +1,30 @@
+%opción noyywrap
+%{
+# incluir  < stdio.h >
+int conting= 0 ,contly= 0 ,contline= 0 ;
+%}
+
+%%
+[ a - zA - Z ] * ing { printf ( " \t Terminacion \" ing \" encontrada \n " ,++conting);}
+[ a - zA - Z ] * ly { printf ( " \t Terminacion \" ly \" encontrada \n " ,++contly);}
+[ \n ] {++línea de control;
+    si (línea continua== 5 ){
+        printf ( " cantidad de \" ing \" encontradas: %i \n " ,continuando);
+        printf ( " cantidad de \" ly \" encontradas: %i \n " ,contly);
+        si (continuando>continuando){
+            printf ( " Hay mas palabras con \" ing \" en texto \n " );
+        }
+        si (continuando<continuando){
+            printf ( " Hay mas palabras con \" ly \" en texto \n " );
+        }
+    conting= 0 ;contly= 0 ;contline= 0 ;
+    printf ( " \n Ingresa un texto de 5 lineas: \n " );
+    }
+}
+%%
+
+int  principal (){
+    printf ( " Ingresa un texto de 5 lineas: \n " );
+    yylex ();
+    devolver  1 ;
+}
