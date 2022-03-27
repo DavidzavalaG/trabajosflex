@@ -1,0 +1,32 @@
+%{
+/*
+* ch2-03.l
+* El ejemplo del contador de palabras para múltiples archivos
+*
+*/
+unsigned  long charCount = 0 , wordCount = 0 , lineCount = 0 ;
+# undef yywrap
+%}
+palabra [ ^ \t\n ] + 
+eol  \n
+%%
+{ palabra } {++wordCount;charCount += yyleng;}
+{ eol } {lineCount++,charCount++;}
+. {++recuento de caracteres;}
+%%
+char **listadearchivos;
+archivo actual sin firmar = 0 ;
+nFiles sin firmar;
+totalCharCount  largo sin signo = 0 ;
+unsigned  long totalWordCount = 0 ;
+unsigned  long totalLineCount = 0 ;
+principal (argc,argv){
+    ARCHIVO *archivo;
+    listaarchivos = argv + 1 ;
+    nArchivos = argc - 1 ;
+    si (argc == 2 ){
+        archivoActual= 1 ;
+        archivo= fopen (argv[ 0 ], " r " );
+    }
+    
+}
